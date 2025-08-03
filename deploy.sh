@@ -53,8 +53,16 @@ clear
 git log -1 --oneline >> README.md
 
 
+# git push --set-upstream main main
 # git remote set-url main git@github.com:serverBKD/info-ventas.git
 # en reemplazo de la contraseña, aplica SSH
 
 # git config --global --add safe.directory /mnt/sdb1/1dxv/info-ventas
+
+# git branch -m main (si inicia en master)
+
+
+# https://github.com/serverBKD/info-ventas.git
+
+# git remote add main https://github.com/serverBKD/info-ventas.git
 
