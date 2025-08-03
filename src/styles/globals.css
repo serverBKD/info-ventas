@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../fonts/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-x-bg: var(--night-void);
+  --color-x-text: var(--moonlight-mist);
+  /* mis variables */
+  --font-sans: "Ubuntu", sans-serif;
+  --font-size: 28px;
+  --card-width: 393px;
+  --radius: 8px;
+  --font-weight: 900;
+}
+
+/* @mixin flex-center {} */
+
+:root {
+  /** Color Test Palette #B624F9*/
+  --color-dev-0: #2cc9ff;
+  --color-dev-1: #222939;
+  --color-dev-2: #0b0e1b;
+  --color-dev-3: #e29e24;
+  --color-dev-4: #05719f;
+  --color-dev-5: #e55210;
+  --color-dev-6: #0f172a4d;
+  --color-dev-7: #B624F9;
+  --color-dev-8: #D1D1E5;
+
+  --background: #1c1c1c;
+  --foreground: #f0f0f0;
+
+  /* mis colores */
+  --night-void: #0F0F1A;
+  --graphite-shadow: #1E1E2E;
+  --neon-ember: #FF6A90;
+  --moonlight-mist: #D1D1E5;
+  --fog-grey: #A8A8C3;
+  --terracota-classic: #E2725B;
+  --terracota-soft: #C89C7D;
+  --terracota-deep: #E35336;
+  --terracota-digital: #E35336;
+  --naranja-oxidado: #D47E30;
+  --cinabrio-moderno: #E84B3D;
+  --naranja-valencia: #F15A29;
+  --azul-oscuro: #1E2A38;
+  --gris-humo: #E5E5E5;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
