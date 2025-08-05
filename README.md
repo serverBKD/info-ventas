@@ -19,3 +19,5 @@ todo: -Details Page - Cart - Modal Input - Supabase Auth - Dashboard;
 ---
 ---
 3835049 2025AGO03: v0.0.2: update readme
+---
+4c0905b 2025AGO05: v0.0.3: components: TagsPool + AddTag + Zustand State
