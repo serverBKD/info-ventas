@@ -4,13 +4,13 @@ import prisma from "../db/client.prisma";
 import { newTag } from "../types/define";
 
 export const addTags = async (tags: newTag) => {
-  const { title, content, links } = tags;
+  const { title, content, link } = tags;
   try {
     const newTag = await prisma.tag.create({
       data: {
         title: title,
         content: content,
-        links: links,
+        link: link,
       },
     });
     if (!newTag) return { message: "failed error", status: 501 };

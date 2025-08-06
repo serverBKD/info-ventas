@@ -23,3 +23,5 @@ todo: -Details Page - Cart - Modal Input - Supabase Auth - Dashboard;
 4c0905b 2025AGO05: v0.0.3: components: TagsPool + AddTag + Zustand State
 ---
 20fb267 2025AGO05: v0.0.3a: dashboard shadcn
+---
+b519375 2025AGO06: v0.0.4: db vercel isWorking + addTags: actions + supabase :(
