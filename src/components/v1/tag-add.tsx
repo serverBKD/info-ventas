@@ -1,35 +1,38 @@
 'use client'
+import { addTags } from "../../server/actions"
 import Modal from "./modal"
 import { useState, useRef } from "react"
 
+import { newTag } from "../../types/define"
 
-type Tags = {
-  id: string
-  tag: string[]
-  createdAt?: string
-}
 
 export default function TagAdd() {
   const [ open, setOpen ] = useState( false )
-  const [Tags, setTags] = useState<Tags>()
-
-  // const Tags: Array<Tags> = []
+  const [Tags, setTags] = useState<newTag>()
 
   const InputRef = useRef<HTMLInputElement>( null )
 
-  const handleClick = () => {
+  const handleClick = async () => {
   //  if (!InputRef.current) return
   const rawValue = InputRef.current?.value || ""
 
-  const newTags = rawValue
+  const prevTags = rawValue
     .split(",")
     .map(tag => tag.trim())
-    .filter(tag => tag.length > 0)
+    .filter( tag => tag.length > 0 )
 
-  const OTags: Tags = { id: String(Date.now()), tag: newTags, createdAt: "2025AGO05" }
+    console.log( { prevTags } )
 
-  setTags(OTags)
-  console.log(OTags)
+    const tags = {
+      title: 'que le digo',
+      content: prevTags[0],
+      links: 'null'
+    }
+
+
+    const responsetag = await addTags( tags )
+    console.log(responsetag)
+
   }
 
 

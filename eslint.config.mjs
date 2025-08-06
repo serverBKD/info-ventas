@@ -11,8 +11,8 @@ import { defineConfig } from 'eslint/config'
 export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    plugins: { js },
-    extends: ['js/recommended'],
+    plugins: { js, prettier: require('eslint-plugin-prettier') },
+    extends: ['js/recommended', 'plugin:prettier/recommended'],
     languageOptions: {
       globals: { ...globals.browser, ...globals.node }
     }
@@ -22,8 +22,9 @@ export default defineConfig([
 
   {
     files: ['**/*.{jsx,tsx}'],
-    plugins: { react: pluginReact, 'react-hooks': pluginReactHooks },
+    plugins: { react: pluginReact, 'react-hooks': pluginReact },
     rules: {
+      'semi':'off',
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
@@ -31,7 +32,8 @@ export default defineConfig([
       'react/jsx-no-bind': ['warn', { ignoreRefs: true }],
       'react/display-name': 'off',
       'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn'
+      'react-hooks/exhaustive-deps': 'warn',
+      'prettier/prettier': 'warn'
     },
     settings: {
       react: {
