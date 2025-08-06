@@ -25,3 +25,5 @@ todo: -Details Page - Cart - Modal Input - Supabase Auth - Dashboard;
 20fb267 2025AGO05: v0.0.3a: dashboard shadcn
 ---
 b519375 2025AGO06: v0.0.4: db vercel isWorking + addTags: actions + supabase :(
+---
+bbc519b 2025AGO06: v0.0.5: addTag: isWorking witout relations

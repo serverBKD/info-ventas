@@ -4,9 +4,11 @@ import Modal from "./modal"
 import { useState, useRef } from "react"
 
 import { newTag } from "../../types/define"
+import { useRouter } from "next/navigation"
 
 
 export default function TagAdd() {
+  const router = useRouter()
   const [ open, setOpen ] = useState( false )
   const [Tags, setTags] = useState<newTag>()
 
@@ -14,24 +16,28 @@ export default function TagAdd() {
 
   const handleClick = async () => {
   //  if (!InputRef.current) return
-  const rawValue = InputRef.current?.value || ""
+    const rawValue = InputRef.current?.value || ""
 
-  const prevTags = rawValue
-    .split(",")
-    .map(tag => tag.trim())
-    .filter( tag => tag.length > 0 )
+    console.log( { rawValue } )
 
-    console.log( { prevTags } )
+
+  // const prevTags = rawValue
+  //   .split(",")
+  //   .map(tag => tag.trim())
+  //   .filter( tag => tag.length > 0 )
+
+    // console.log( { prevTags } )
 
     const tags = {
-      title: 'que le digo',
-      content: prevTags[0],
+      title: `${Date.now()}`,
+      content: rawValue,
       links: 'null'
     }
 
 
     const responsetag = await addTags( tags )
-    console.log(responsetag)
+    router.push('/')
+    console.log({responsetag})
 
   }
 
